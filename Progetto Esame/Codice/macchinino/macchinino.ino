@@ -48,6 +48,7 @@ void setup() {
 
 void loop() {
   if(mode == 0){
+    
     SPEED = BTSpeed;
     int dFront = readPing();
     if(dFront < 30 && isFwd == true){
@@ -89,6 +90,10 @@ void loop() {
         case 'M':
           mode = 1;
           break;
+        case 'K':
+          mode = 0;
+           stopMotors();
+          break;
         case 'Y':
           for(int i = 90; i < 180; i+=4){
             myservo.write(i);
@@ -124,7 +129,7 @@ void loop() {
         int dr = lookRight();
         Serial.println(dr);
         delay(500);
-        if(dr >= dl){
+      if(dr >= dl){
           turnRight();
           delay(650);
           stopMotors();
@@ -154,8 +159,9 @@ void goForward(){
   isFwd = true;
   motor1.run(FORWARD);
   motor2.run(BACKWARD);
-  motor3.run(BACKWARD);
-  motor4.run(FORWARD);
+  motor3.run(FORWARD);
+  motor4.run(BACKWARD);
+  
   for(int i = 100; i < SPEED; i+=2){
     motor1.setSpeed(i);
     motor2.setSpeed(i);
@@ -167,10 +173,10 @@ void goForward(){
 
 void goBackward(){
   isFwd = false;
-   motor1.run(BACKWARD);
+  motor1.run(BACKWARD);
   motor2.run(FORWARD);
-  motor3.run(FORWARD);
-  motor4.run(BACKWARD);
+  motor3.run(BACKWARD);
+  motor4.run(FORWARD);
   for(int i = 100; i < SPEED; i+=2){
     motor1.setSpeed(i);
     motor2.setSpeed(i);
@@ -187,6 +193,8 @@ void turnLeft(){
   motor3.setSpeed(180);
   motor4.setSpeed(180);
   
+ 
+
   motor2.run(FORWARD);
   motor3.run(BACKWARD);
 }
@@ -198,8 +206,9 @@ void turnRight(){
   motor3.setSpeed(180);
   motor4.setSpeed(180);
   
-  motor1.run(FORWARD);
-  motor4.run(BACKWARD);
+  motor1.run(BACKWARD);
+  motor4.run(FORWARD);
+  
 }
 
 int lookLeft(){
