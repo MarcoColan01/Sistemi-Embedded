@@ -5,9 +5,8 @@
 Autore: Marco Colangelo
 
 Descrizione del progetto: il progetto MacchinIno consiste nella costruzione di una macchina comandata tramite Bluetooth da un'app per telefono Android compatibile col modulo BT usato, ossia l' HC-06. MacchiIno ha due modalità di funzionamento:
-<li>
-    -Modalità 1: Guida libera. è la modalità di default non appena si accende la macchina: tramite questa modalità, si può comandare la macchina tramite il pad dell'applicazione sul telefono, scegliendo la direzione e con anche la possibilità di regolare la velocità. Nel caso in cui il sensore ad ultrasuoni rilevi un ostacolo davanti alla macchina (non dietro perchè il sensore è installato solo davanti), la macchina si ferma in automatico e sarà poi l'utente a decidere come muoverla.
-    Modalità 2: autopilot. In questa modalità, la macchina si muove da sola nell'ambiente circostante e, tramite il suo sensore ad ultrasuoni, è in grado di rilevare eventuali ostacoli. Nel caso ne rilevi uno, si ferma e fa una scansione dell'ambiente circostante sempre tramite il sensore ad ultrasuoni, prendendo poi una strada alternativa priva di ostacoli ruotando a destra o sinistra. 
+<li>Modalità 1: Guida libera. è la modalità di default non appena si accende la macchina: tramite questa modalità, si può comandare la macchina tramite il pad dell'applicazione sul telefono, scegliendo la direzione e con anche la possibilità di regolare la velocità. Nel caso in cui il sensore ad ultrasuoni rilevi un ostacolo davanti alla macchina (non dietro perchè il sensore è installato solo davanti), la macchina si ferma in automatico e sarà poi l'utente a decidere come muoverla.</li>
+<li> Modalità 2: autopilot. In questa modalità, la macchina si muove da sola nell'ambiente circostante e, tramite il suo sensore ad ultrasuoni, è in grado di rilevare eventuali ostacoli. Nel caso ne rilevi uno, si ferma e fa una scansione dell'ambiente circostante sempre tramite il sensore ad ultrasuoni, prendendo poi una strada alternativa priva di ostacoli ruotando a destra o sinistra. </li>
 
 <h2>HW e altro materiale</h2>
     <li>Scheda: Arduino Uno Rev3</li>
