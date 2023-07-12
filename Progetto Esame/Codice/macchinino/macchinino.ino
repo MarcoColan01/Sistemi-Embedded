@@ -64,22 +64,23 @@ void loop() {
         goBackward();
          break;
         case 'W':
-          turnLeft();
-          break;
-        case 'E':
           turnRight();
           break;
+        case 'E':
+          turnLeft();
+          break;
         case 'X':
+        mode = 0;
           stopMotors();
           break;
-        case 'P':
+        case 'P':     //cerchio
           if(SPEED < 245)
             BTSpeed += 10;
            else {
             BTSpeed = 255;
            }
           break;
-        case 'D':
+        case 'Y':     //triangolo
           if(SPEED > 110){
             BTSpeed -= 10; 
           }
@@ -94,13 +95,7 @@ void loop() {
           mode = 0;
            stopMotors();
           break;
-        case 'Y':
-          for(int i = 90; i < 180; i+=4){
-            myservo.write(i);
-            delay(10);
-            }
-          delay(500);
-          break;
+       
        }
      }
   }
@@ -110,7 +105,7 @@ void loop() {
     }
     if(bt.available()){
       char data = bt.read();
-      if(data == 'M'){
+       if (data == 'X'){
         mode = 0;
         stopMotors();
       }
